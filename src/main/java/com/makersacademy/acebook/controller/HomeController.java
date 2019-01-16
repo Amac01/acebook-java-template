@@ -53,5 +53,16 @@ public class HomeController {
 		return "redirect:/hello";
 	}
 
+	@GetMapping("/content")
+	public String content(Model model){
+		model.addAttribute("content", postRepository.findAll());
+//		model.addAttribute("content", new Post());
+
+		return "content";
+	}
+
+
+
+
 
 }

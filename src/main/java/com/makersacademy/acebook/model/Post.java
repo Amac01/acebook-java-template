@@ -23,4 +23,8 @@ public class Post {
     public String getContent() {
         return content;
     }
+
+    public Long getId(){
+        return id;
+    }
 }
