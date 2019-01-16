@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+
+    <ul th:each="post: ${posts}">
+        <li th:text="${post.getContent()}">
+
+        </li>
+    </ul>
+
+    <form action="/newpost" th:object="${post}" method="post">
+        <input type="text" th:field="*{content}" placeholder="Add comments">
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <!--<p th:text=" ${post.id} + ': ' + ${day.content}"></p>-->
+
+</body>
+</html>
