@@ -56,12 +56,17 @@ public class HomeController {
 	@GetMapping("/content")
 	public String content(Model model){
 		model.addAttribute("content", postRepository.findAll());
-//		model.addAttribute("content", new Post());
+		model.addAttribute("newContent", new Post());
 
 		return "content";
 	}
 
+	@PostMapping("/newContent")
+	public String tableaux(@ModelAttribute Post post){
+		postRepository.save(post);
 
+		return "redirect:/content";
+	}
 
 
 
