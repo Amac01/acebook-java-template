@@ -9,7 +9,6 @@
 <body>
 
     <ul th:each="content: ${content}">
-        <!--<li th:text="${post.getContent()}">-->
         <li th:text="${'The ID is : ' + content.getId()+ ' ' + 'and the content is : ' + content.getContent() + '.'}">
         </li>
     </ul>
